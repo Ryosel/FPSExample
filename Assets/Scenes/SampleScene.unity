@@ -972,3 +972,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletFactory: {fileID: 4193750502688777670, guid: cf5865bea02005e48ada1afe0fb1494e, type: 3}
   firePosition: {fileID: 1669621916}
+  bImpactFactorys:
+  - {fileID: 100002, guid: 40b8f6dfb2987394ab2cd8cf583d944a, type: 3}
+  - {fileID: 100002, guid: 3076c02eeb53d1d439fa308ddddae7b9, type: 3}
