@@ -36,10 +36,10 @@ public class PlayerFire : MonoBehaviour
             // 1. 카메라에서 카메라의 앞방향으로 시선을 만들고
             Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
-            // Layer 설명
+            int layer = (1 << LayerMask.NameToLayer("Default"));
             RaycastHit hitInfo;
             // 2. 바라보고싶다.
-            if (Physics.Raycast(ray, out hitInfo))
+            if (Physics.Raycast(ray, out hitInfo, float.MaxValue, layer))
             {
                 // 3. 시선이 닿은 곳에 총알자국공장에서 총알자국을 만들어서 배치하고싶다.
                 GameObject bulletImpact = Instantiate(bImpactFactorys[(int)BImpactName.Floor]);
