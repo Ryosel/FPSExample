@@ -7,8 +7,10 @@ using UnityEngine.AI;
 // 태어날 때 agnet에게 목적지(플레이어)를 알려주고싶다.
 // 상태머신을 이용해서 Enemy를 제어하고싶다.
 // 대기, 이동, 공격(공격대기)
+// 상태머신이 바뀌면 애니메이션 상태도 같이 바뀌게 하고싶다.
 public class Enemy : MonoBehaviour
 {
+    public Animator anim;
     public enum State
     {
         Idle,
@@ -50,6 +52,7 @@ public class Enemy : MonoBehaviour
         {
             // 이동상태로 전이하고싶다.
             state = State.Move;
+            anim.SetTrigger("Move");
         }
     }
 
