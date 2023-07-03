@@ -18,6 +18,8 @@ public class PlayerFire : MonoBehaviour
     public Transform firePosition;
     // 총알자국공장
     public GameObject[] bImpactFactorys;
+
+   
     void Start()
     {
     }
