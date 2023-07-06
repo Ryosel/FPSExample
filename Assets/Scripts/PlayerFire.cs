@@ -14,7 +14,7 @@ public class PlayerFire : MonoBehaviour
         Enemy
     }
 
-    public GameObject bulletFactory;
+    public GameObject grenadeFactory;
     public Transform firePosition;
     // 총알자국공장
     public GameObject[] bImpactFactorys;
@@ -27,7 +27,7 @@ public class PlayerFire : MonoBehaviour
     void Update()
     {
         UpdateFire();
-        // UpdageGrenade();
+        UpdageGrenade();
     }
 
     private void UpdateFire()
@@ -80,14 +80,11 @@ public class PlayerFire : MonoBehaviour
         // 만약 사용자가 G키를 누르면 폭탄을 던지고 싶다.
         if (Input.GetKeyDown(KeyCode.G))
         {
-            // 총알공장에서 총알을 만들고
-            GameObject bullet = Instantiate(bulletFactory);
-            // 그 총알을 총구위치에 배치하고싶다.
-            bullet.transform.position = firePosition.position;
-            bullet.transform.forward = firePosition.forward;
-            // 총알의 speed를 바꾸고싶다.
-            Bullet bulletComp = bullet.GetComponent<Bullet>();
-            bulletComp.speed = 20;
+            GameObject g = Instantiate(grenadeFactory);
+            g.transform.position = firePosition.position;
+            g.transform.forward = firePosition.forward;
+
+            g.GetComponent<Grenade>().speed = 10;
         }
     }
 
