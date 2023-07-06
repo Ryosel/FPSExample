@@ -34,5 +34,11 @@ public class Enemy2AnimEvent : MonoBehaviour
         enemy2.OnAttackWait_Finished();
     }
 
+    public void OnReact_Finished()
+    {
+        enemy2.OnReact_Finished();
+    }
+   
+
 
 }

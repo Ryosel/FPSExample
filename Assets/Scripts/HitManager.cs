@@ -23,7 +23,7 @@ public class HitManager : MonoBehaviour
         if (crt != null)
             StopCoroutine(crt);
         crt = StartCoroutine(IEHit(0.1f));
-        //crt = StartCoroutine("IEHit", 0.1f);
+        //crt = StartCoroutine("IEHit", 0.1f, 1);
     }
     Coroutine crt;
 
