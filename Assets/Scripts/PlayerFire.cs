@@ -1,12 +1,19 @@
+<<<<<<< Updated upstream
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+=======
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+>>>>>>> Stashed changes
 
 // 사용자가 마우스 왼쪽 버튼을 누르면
 // 총알공장에서 총알을 만들고
 // 그 총알을 총구위치에 배치하고싶다.
+<<<<<<< Updated upstream
 // 태어날 때 수류탄UI공장에서 수류탄UI를 만들어서 화면에 배치하고 싶다.
 // 쿨타임이 1일 때 수류탄을 던질 수 있다. 던지면 쿨타임이 0이되게하고싶다.
 public class PlayerFire : MonoBehaviour
@@ -35,11 +42,28 @@ public class PlayerFire : MonoBehaviour
 
     void Start()
     {
+=======
+public class PlayerFire : MonoBehaviour
+{
+    public GameObject bulletFactory;
+    public Transform firePosition;
+    public GameObject[] bulletImpactFactories;
+
+    enum BImpactName{
+        Floor = 0,
+        Enemy = 1
+    }
+
+    void Start()
+    {
+
+>>>>>>> Stashed changes
     }
 
     void Update()
     {
         UpdateFire();
+<<<<<<< Updated upstream
         UpdageGrenade();
     }
 
@@ -103,4 +127,46 @@ public class PlayerFire : MonoBehaviour
     }
 
 
+=======
+        // // 만약 사용자가 마우스 왼쪽 버튼을 누르면
+        // if (Input.GetButtonDown("Fire1"))
+        // {
+        //     // 총알공장에서 총알을 만들고
+        //     GameObject bullet = Instantiate(bulletFactory);
+        //     // 그 총알을 총구위치에 배치하고싶다.
+        //     bullet.transform.position = firePosition.position;
+        //     bullet.transform.forward = firePosition.forward;
+        //     // 총알의 speed를 바꾸고싶다.
+        //     Bullet bulletComp = bullet.GetComponent<Bullet>();
+        //     bulletComp.speed = 20;
+        // }
+    }
+
+    void UpdateFire() //Serialization/Deserialization
+    {
+        if(Input.GetButtonDown("Fire1")){
+            //Ray
+            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+
+            //Layer
+            //int layer = (1 << 9) | (1 << 10); //10 0000 0000
+            //int layer = (1 << LayerMask.NameToLayer("Floor")) | (1 << LayerMask.NameToLayer("Cube")); //10 0000 0000
+            int layer = (1 << LayerMask.NameToLayer("Default")); //10 0000 0000
+
+            //HitInfo
+            RaycastHit hitInfo;
+            if(Physics.Raycast(ray, out hitInfo, float.MaxValue, layer)){ //Tunneling 등에 사용
+                GameObject bulletImpact = Instantiate(bulletImpactFactories[(int)BImpactName.Enemy]);
+                //GameObject bulletImpact = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                bulletImpact.transform.localScale = Vector3.one;
+                bulletImpact.transform.position = hitInfo.point;
+                bulletImpact.transform.forward = hitInfo.normal;
+            }
+            else{
+            }        
+        }
+
+    
+    }
+>>>>>>> Stashed changes
 }

@@ -140,6 +140,8 @@ GameObject:
   - component: {fileID: 4193750502688777673}
   - component: {fileID: 4193750502688777672}
   - component: {fileID: 4193750502688777671}
+  - component: {fileID: 7286335713278940479}
+  - component: {fileID: -1118105249289774267}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -192,3 +194,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7286335713278940479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4193750502688777670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adf39b8d67f8fe4883e0dc98c78921a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletFactory: {fileID: 0}
+  firePosition: {fileID: 0}
+  bulletImpactFactories: []
+--- !u!114 &-1118105249289774267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4193750502688777670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b872b94421acc624cae1eb1f9ec43913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxJumpCount: 2
+  jumpPower: 10
+  gravity: -9.81
+  speed: 5

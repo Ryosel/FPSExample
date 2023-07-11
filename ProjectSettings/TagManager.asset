@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,13 @@ TagManager:
   - 
   - Player
   - Floor
+<<<<<<< Updated upstream
   - Enemy
   - 
+=======
+  - Cube
+  - Enemy
+>>>>>>> Stashed changes
   - 
   - 
   - 
